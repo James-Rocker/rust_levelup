@@ -1,13 +1,15 @@
+# this is the rust manifest file. Different to the config file
 [package]
 name = "rust_levelup"
 version = "0.1.0"
-authors = ["James Rocker <james.rocker@simplybusiness.co.uk>"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[lib]
-name = "myswankynewlib"
-path = "src/lib.rs"
+[workspace]
+members = [
+    "crates/learning_rust",
+]
 
 [dependencies]
+log = "0.4"
+learning_rust = { path = "crates/learning_rust" }

@@ -1,11 +1,13 @@
-pub fn encapsulate() {
-    println!("Hello, world!");
-    do_a_thing();
-}
+// as this file is a lib, this defines
 
 fn do_a_thing() {
     // rust functions are by default private. That's pretty cool
     println!("Hello, a different thing!");
+}
+
+pub fn encapsulate() {
+    println!("Hello, world!");
+    do_a_thing();
 }
 
 // we aren't using this function so commenting it out so rust compiler doesn't complain
@@ -25,5 +27,4 @@ pub fn optional_args(string_option: Option<String>, second_string_option: Option
     let found_unit = second_string_option.unwrap_or("oh no, you also didn't specify the second argument".parse().unwrap());
     format!("{}{}", a_thing, found_unit) // implicit returns
 }
-
 
