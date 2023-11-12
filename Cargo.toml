@@ -8,9 +8,13 @@ edition = "2021"
 [workspace]
 members = [
     "crates/learning_rust",
+    "crates/async_objects"
 ]
 
 [dependencies]
 log = "0.4"
 env_logger = "0.10.1"
+futures = "0.3.29"
 learning_rust = { path = "crates/learning_rust" }
+async_objects = { path = "crates/async_objects" }
+tokio = { version = "1", features = ["full"] } # this is quite large and only needed for the async_objects crate
