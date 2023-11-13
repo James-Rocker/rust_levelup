@@ -8,7 +8,8 @@ edition = "2021"
 [workspace]
 members = [
     "crates/learning_rust",
-    "crates/async_objects"
+    "crates/async_objects",
+    "crates/data_structures"
 ]
 
 [dependencies]
@@ -17,4 +18,6 @@ env_logger = "0.10.1"
 futures = "0.3.29"
 learning_rust = { path = "crates/learning_rust" }
 async_objects = { path = "crates/async_objects" }
+data_structures = { path = "crates/data_structures" }
 tokio = { version = "1", features = ["full"] } # this is quite large and only needed for the async_objects crate
+polars = {version = "0.34.2", features = ["lazy", "parquet"]}
