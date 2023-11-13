@@ -2,7 +2,7 @@
 use async_objects::{thread_spawn, thread_join, messaging_and_thread_ownership, future};
 use tokio::time::{sleep, Duration};
 
-
+// Uncomment this out if you want to run it. This might be moved later, haven't decided
 // fn main() {
 //     // thread_spawn();
 //     // thread_join();
@@ -29,6 +29,7 @@ async fn main() {
      */
 
     let result = tokio::try_join!(
+        // Notice, we can't use named args. Everything is positional
         async_task(2),
         async_task(1),
         async_task(3),
