@@ -51,3 +51,27 @@ pub fn find_short_better_solution(s: &str) -> u32 {
         .unwrap()
         .len() as u32
 }
+
+use std::vec::Vec;
+
+pub fn divisors(integer: u32) -> Result<Vec<u32>, String>  {
+    // kata - https://www.codewars.com/kata/544aed4c4a30184e960010f4
+    // generate the return vector
+    let mut result: Vec<u32> = Vec::new();
+
+    // 2..integer allows for a range to be create then we can iterate over it
+    for number in 2..integer {
+        // if the number is remainder is 0
+        if integer.clone() % number == 0 {
+            // push the results to the returning vector if it is
+            result.push(number.clone());
+        }
+    }
+
+    // error out if the list is empty
+    return if result.is_empty() {
+        Err(format!("{} is prime", integer).to_string())
+    } else {
+        Ok(result)
+    }
+}
