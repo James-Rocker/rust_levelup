@@ -10,7 +10,8 @@ members = [
     "crates/learning_rust",
     "crates/async_objects",
     "crates/data_structures",
-    "crates/rust_kata_exercises"
+    "crates/rust_kata_exercises",
+    "crates/following_rust_tutorial"
 ]
 
 [dependencies]
