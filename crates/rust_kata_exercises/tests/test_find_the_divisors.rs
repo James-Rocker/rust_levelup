@@ -4,9 +4,9 @@ use rust_kata_exercises::divisors;
 
 #[test]
 fn simple_examples() {
-    assert_eq!(divisors(15), Ok(vec![3,5]));
-    assert_eq!(divisors(253), Ok(vec![11,23]));
-    assert_eq!(divisors(24), Ok(vec![2,3,4,6,8,12]));
+    assert_eq!(divisors(15), Ok(vec![3, 5]));
+    assert_eq!(divisors(253), Ok(vec![11, 23]));
+    assert_eq!(divisors(24), Ok(vec![2, 3, 4, 6, 8, 12]));
 
     assert_eq!(divisors(13), Err("13 is prime".to_string()));
     assert_eq!(divisors(3), Err("3 is prime".to_string()));

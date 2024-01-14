@@ -1,7 +1,7 @@
+use data_structures::{basic_data_frame, builtin_data_structs, parquet_files, read_parquet_file};
+use polars::prelude::*;
 use std::env;
 use std::path::PathBuf;
-use polars::prelude::*;
-use data_structures::{builtin_data_structs, basic_data_frame, read_parquet_file, parquet_files};
 
 fn get_current_working_dir() -> std::io::Result<PathBuf> {
     // needed this to locate the current working directory (for the parquet file to go)

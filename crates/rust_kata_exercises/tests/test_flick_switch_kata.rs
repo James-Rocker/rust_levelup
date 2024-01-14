@@ -3,7 +3,6 @@
 // Note, these tests were from the codewars flick switch kata. I did not write these
 // Kata - https://www.codewars.com/kata/64fbfe2618692c2018ebbddb
 
-
 #[cfg(test)]
 mod tests {
     use rust_kata_exercises::flick_switch;
@@ -11,10 +10,10 @@ mod tests {
     use std::borrow::Borrow;
     use std::borrow::Cow;
 
-    use rand::thread_rng;
-    use rand::Rng;
     use rand::rngs::ThreadRng;
     use rand::seq::SliceRandom;
+    use rand::thread_rng;
+    use rand::Rng;
 
     fn test_flick<'a, S: Borrow<[&'a str]>, E: Borrow<[bool]>>(strings: S, expected: E) {
         let strings: &[&'a str] = strings.borrow();
@@ -24,12 +23,24 @@ mod tests {
 
     #[test]
     fn fixed_tests() {
-        test_flick(["codewars", "flick", "code", "wars"], [true, false, false, false]);
-        test_flick(["flick", "11037", "3.14", "53"], [false, false, false, false]);
-        test_flick(["false", "false", "flick", "sheep", "flick"], [true, true, false, false, true]);
+        test_flick(
+            ["codewars", "flick", "code", "wars"],
+            [true, false, false, false],
+        );
+        test_flick(
+            ["flick", "11037", "3.14", "53"],
+            [false, false, false, false],
+        );
+        test_flick(
+            ["false", "false", "flick", "sheep", "flick"],
+            [true, true, false, false, true],
+        );
         test_flick(["bicycle"], [true]);
         test_flick(["john, smith, susan", "flick"], [true, false]);
-        test_flick(["flick", "flick", "flick", "flick", "flick"], [false, true, false, true, false]);
+        test_flick(
+            ["flick", "flick", "flick", "flick", "flick"],
+            [false, true, false, true, false],
+        );
         test_flick([], []);
     }
 
@@ -43,7 +54,8 @@ mod tests {
             if value_type == "string" {
                 let length = rng.gen_range(1..10);
 
-                const ASCII_LETTERS: &[u8] = b"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                const ASCII_LETTERS: &[u8] =
+                    b"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
                 let random_string: String = (0..length)
                     .map(|_| *ASCII_LETTERS.choose(rng).unwrap() as char)
                     .collect();
@@ -54,7 +66,8 @@ mod tests {
         }
 
         fn solve(list: &[&str]) -> Vec<bool> {
-            list.iter().copied()
+            list.iter()
+                .copied()
                 .scan(true, |is_on: &mut bool, item: &str| {
                     *is_on ^= item == "flick";
                     Some(*is_on)

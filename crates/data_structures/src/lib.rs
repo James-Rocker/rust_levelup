@@ -1,7 +1,7 @@
+use parquet::file::reader::{FileReader, SerializedFileReader};
+use polars::prelude::*;
 use std::fs::File;
 use std::path::Path;
-use polars::prelude::*;
-use parquet::file::reader::{FileReader, SerializedFileReader};
 
 pub fn builtin_data_structs() {
     /*
@@ -17,7 +17,6 @@ pub fn builtin_data_structs() {
     for x in &vec {
         println!("{x}");
     }
-
 }
 
 pub fn basic_data_frame() {
@@ -33,7 +32,6 @@ pub fn basic_data_frame() {
     ];
 
     println!("Rust made {:?}", rust_df);
-
 }
 
 pub fn read_parquet_file() {
@@ -62,11 +60,9 @@ pub fn parquet_files() -> PolarsResult<DataFrame> {
     2 dimensional data structure that is backed by a Series
      */
     let parquet_df = LazyFrame::scan_parquet("Weather.parquet", ScanArgsParquet::default())?
-        .select([
-            all()
-        ])
+        .select([all()])
         .collect()?;
 
     println!("Parquet, {:?}", parquet_df);
-    Ok(parquet_df)  // we need this because of the Polars result and so we can use the select all
+    Ok(parquet_df) // we need this because of the Polars result and so we can use the select all
 }

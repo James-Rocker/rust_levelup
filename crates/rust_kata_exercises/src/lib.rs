@@ -1,4 +1,3 @@
-
 pub fn flick_switch(list: &[&str]) -> Vec<bool> {
     // Kata - https://www.codewars.com/kata/64fbfe2618692c2018ebbddb
     let mut flick_val: bool = true;
@@ -9,7 +8,7 @@ pub fn flick_switch(list: &[&str]) -> Vec<bool> {
         }
         return_list.push(flick_val.clone())
     }
-    return return_list
+    return return_list;
 }
 
 pub fn find_short(s: &str) -> u32 {
@@ -23,7 +22,7 @@ pub fn find_short(s: &str) -> u32 {
             shortest_word = word.chars().count() as u32;
         }
     }
-    return shortest_word
+    return shortest_word;
 }
 
 pub fn find_short_better_solution(s: &str) -> u32 {
@@ -41,20 +40,18 @@ pub fn find_short_better_solution(s: &str) -> u32 {
 
     // run min by key against an iterator taking a key based on a value. Then each value in the
     // iterator length is defined. Then take the complex enumerator type and get the result
-    println!("Minimum by key {}", s.split_whitespace()
-        .min_by_key(|s| s.len())
-        .unwrap());
+    println!(
+        "Minimum by key {}",
+        s.split_whitespace().min_by_key(|s| s.len()).unwrap()
+    );
 
     // finally get the length as an unsigned integer
-    return s.split_whitespace()
-        .min_by_key(|s| s.len())
-        .unwrap()
-        .len() as u32
+    return s.split_whitespace().min_by_key(|s| s.len()).unwrap().len() as u32;
 }
 
 use std::vec::Vec;
 
-pub fn divisors(integer: u32) -> Result<Vec<u32>, String>  {
+pub fn divisors(integer: u32) -> Result<Vec<u32>, String> {
     // kata - https://www.codewars.com/kata/544aed4c4a30184e960010f4
     // generate the return vector
     let mut result: Vec<u32> = Vec::new();
@@ -73,5 +70,5 @@ pub fn divisors(integer: u32) -> Result<Vec<u32>, String>  {
         Err(format!("{} is prime", integer).to_string())
     } else {
         Ok(result)
-    }
+    };
 }

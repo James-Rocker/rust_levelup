@@ -26,7 +26,6 @@ pub fn thread_spawn() {
     }
 }
 
-
 pub fn thread_join() {
     /*
     Similar to thread_spawn function, but this allows the spawned thread to finish the work because
@@ -96,7 +95,9 @@ complete running.
 
 // `foo()` returns a type that implements `Future<Output = u8>`.
 // `foo().await` will result in a value of type `u8`.
-async fn foo() -> u8 { 5 }
+async fn foo() -> u8 {
+    5
+}
 
 pub fn future() -> impl Future<Output = u8> {
     // This `async` block results in a type that implements
@@ -107,4 +108,3 @@ pub fn future() -> impl Future<Output = u8> {
         x + 5
     }
 }
-

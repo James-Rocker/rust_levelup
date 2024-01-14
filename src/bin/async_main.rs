@@ -1,5 +1,5 @@
-#[allow(unused_imports)]  // in case we want to comment out bits of the imports to run here
-use async_objects::{thread_spawn, thread_join, messaging_and_thread_ownership, future};
+#[allow(unused_imports)] // in case we want to comment out bits of the imports to run here
+use async_objects::{future, messaging_and_thread_ownership, thread_join, thread_spawn};
 use tokio::time::{sleep, Duration};
 
 // Uncomment this out if you want to run it. This might be moved later, haven't decided
